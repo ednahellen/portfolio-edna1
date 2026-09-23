@@ -1,0 +1,1256 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Como posso ajudar sua empresa</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            color: #1e293b;
+            background: #f8fafc;
+            line-height: 1.6;
+        }
+
+        /* MENU */
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: #ffffff;
+            border-bottom: 1px solid #e2e8f0;
+            padding: 16px 30px;
+            text-align: center;
+        }
+
+        nav a {
+            color: #334155;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        nav a:hover {
+            color: #2563eb;
+        }
+
+        /* CAPA */
+
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 60px 25px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #eff6ff,
+                    #ffffff 55%,
+                    #f1f5f9
+                );
+        }
+
+        .hero-content {
+            max-width: 900px;
+        }
+
+        .hero-label {
+            color: #2563eb;
+            font-size: 14px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: clamp(42px, 7vw, 72px);
+            line-height: 1.05;
+            color: #0f172a;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 span {
+            color: #2563eb;
+        }
+
+        .hero p {
+            font-size: 21px;
+            color: #64748b;
+            max-width: 750px;
+            margin: auto;
+        }
+
+        .hero-button {
+            display: inline-block;
+            margin-top: 35px;
+            padding: 15px 28px;
+            background: #2563eb;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+
+        /* SEÇÕES */
+
+        section {
+            max-width: 1150px;
+            margin: auto;
+            padding: 90px 25px;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 750px;
+            margin: 0 auto 55px;
+        }
+
+        .section-header small {
+            color: #2563eb;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .section-header h2 {
+            font-size: 38px;
+            color: #0f172a;
+            margin: 10px 0 15px;
+        }
+
+        .section-header p {
+            color: #64748b;
+        }
+
+        /* PROBLEMAS */
+
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .problem {
+            background: white;
+            padding: 30px;
+            border-radius: 14px;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 8px 25px rgba(15, 23, 42, .05);
+        }
+
+        .problem-number {
+            color: #2563eb;
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .problem h3 {
+            color: #0f172a;
+            margin-bottom: 10px;
+        }
+
+        .problem p {
+            color: #64748b;
+            font-size: 15px;
+        }
+
+        /* EXPLICAÇÃO */
+
+        .explanation {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .explanation h2 {
+            font-size: 38px;
+            color: #0f172a;
+            margin-bottom: 20px;
+        }
+
+        .explanation p {
+            color: #64748b;
+            margin-bottom: 15px;
+        }
+
+        .example-box {
+            background: #0f172a;
+            color: white;
+            padding: 35px;
+            border-radius: 16px;
+        }
+
+        .example-box h3 {
+            margin-bottom: 20px;
+            color: #93c5fd;
+        }
+
+        .example {
+            padding: 14px 0;
+            border-bottom: 1px solid #334155;
+        }
+
+        .example:last-child {
+            border-bottom: none;
+        }
+
+        .example strong {
+            display: block;
+            margin-bottom: 3px;
+        }
+
+        .example span {
+            color: #cbd5e1;
+            font-size: 14px;
+        }
+
+        /* SERVIÇOS */
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .service {
+            background: white;
+            padding: 32px;
+            border-radius: 15px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .service-icon {
+            font-size: 30px;
+            margin-bottom: 15px;
+        }
+
+        .service h3 {
+            font-size: 22px;
+            color: #0f172a;
+            margin-bottom: 10px;
+        }
+
+        .service p {
+            color: #64748b;
+        }
+
+        .service ul {
+            margin-top: 15px;
+            padding-left: 20px;
+            color: #64748b;
+        }
+
+        .service li {
+            margin: 5px 0;
+        }
+
+        /* EXEMPLO PRÁTICO */
+
+        .scenario {
+            background: #eff6ff;
+            max-width: none;
+            padding: 90px 25px;
+        }
+
+        .scenario-inner {
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .scenario-box {
+            background: white;
+            border-radius: 16px;
+            padding: 35px;
+            margin-top: 30px;
+            border: 1px solid #dbeafe;
+        }
+
+        .scenario-box h3 {
+            color: #2563eb;
+            margin-bottom: 10px;
+        }
+
+        .arrow {
+            text-align: center;
+            font-size: 30px;
+            color: #2563eb;
+            margin: 15px 0;
+        }
+
+        /* PROCESSO */
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .step {
+            text-align: center;
+            padding: 25px;
+        }
+
+        .step-number {
+            width: 48px;
+            height: 48px;
+            margin: auto auto 15px;
+            border-radius: 50%;
+            background: #2563eb;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        .step h3 {
+            margin-bottom: 8px;
+            color: #0f172a;
+        }
+
+        .step p {
+            font-size: 14px;
+            color: #64748b;
+        }
+
+        /* TECNOLOGIAS */
+
+        .technology {
+            background: #0f172a;
+            color: white;
+            max-width: none;
+        }
+
+        .technology-inner {
+            max-width: 1000px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .technology h2 {
+            font-size: 38px;
+            margin-bottom: 15px;
+        }
+
+        .technology p {
+            color: #94a3b8;
+            margin-bottom: 35px;
+        }
+
+        .tech-list {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .tech {
+            padding: 10px 18px;
+            border: 1px solid #334155;
+            background: #1e293b;
+            border-radius: 30px;
+            color: #dbeafe;
+            font-size: 14px;
+        }
+
+        /* FORMAÇÃO */
+
+        .formation {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .formation-card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .formation-card h3 {
+            color: #0f172a;
+            margin-bottom: 8px;
+        }
+
+        .formation-card p {
+            color: #64748b;
+            font-size: 14px;
+        }
+
+        /* FINAL */
+
+        .final {
+            max-width: none;
+            background: linear-gradient(135deg, #1d4ed8, #2563eb);
+            color: white;
+            text-align: center;
+            padding: 100px 25px;
+        }
+
+        .final h2 {
+            font-size: 42px;
+            margin-bottom: 20px;
+        }
+
+        .final p {
+            max-width: 700px;
+            margin: auto;
+            color: #dbeafe;
+            font-size: 18px;
+        }
+
+        .final-button {
+            display: inline-block;
+            margin-top: 30px;
+            background: white;
+            color: #1d4ed8;
+            padding: 15px 28px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        footer {
+            background: #020617;
+            color: #94a3b8;
+            text-align: center;
+            padding: 30px;
+            font-size: 13px;
+        }
+
+        /* RESPONSIVO */
+
+        @media (max-width: 800px) {
+
+            nav {
+                display: none;
+            }
+
+            .problem-grid,
+            .service-grid,
+            .formation {
+                grid-template-columns: 1fr;
+            }
+
+            .explanation {
+                grid-template-columns: 1fr;
+            }
+
+            .steps {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 500px) {
+
+            section {
+                padding: 65px 20px;
+            }
+
+            .steps {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 42px;
+            }
+
+            .hero p {
+                font-size: 18px;
+            }
+
+            .section-header h2,
+            .explanation h2 {
+                font-size: 30px;
+            }
+
+            .final h2 {
+                font-size: 32px;
+            }
+        }
+
+        @media print {
+
+            nav,
+            .hero-button,
+            .final-button {
+                display: none;
+            }
+
+            section {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- MENU -->
+
+<nav>
+    <a href="#inicio">Início</a>
+    <a href="#problemas">Problemas</a>
+    <a href="#solucoes">Soluções</a>
+    <a href="#exemplo">Exemplo</a>
+    <a href="#processo">Como trabalho</a>
+    <a href="#sobre">Sobre mim</a>
+</nav>
+
+
+<!-- CAPA -->
+
+<header class="hero" id="inicio">
+
+    <div class="hero-content">
+
+        <div class="hero-label">
+            Tecnologia para empresas
+        </div>
+
+        <h1>
+            Eu transformo<br>
+            <span>problemas em soluções.</span>
+        </h1>
+
+        <p>
+            Me chamo Edna Del Ry e trabalho com tecnologia, dados e desenvolvimento
+            de soluções. Ajudo empresas a organizar informações, reduzir tarefas
+            manuais, melhorar processos e transformar dados em informações úteis
+            para o dia a dia e para a tomada de decisões.
+        </p>
+
+        <a href="#problemas" class="hero-button">
+            Veja como posso ajudar
+        </a>
+
+    </div>
+
+</header>
+
+
+<!-- PROBLEMAS -->
+
+<section id="problemas">
+
+    <div class="section-header">
+
+        <small>Talvez sua empresa passe por isso</small>
+
+        <h2>
+            Problemas que posso ajudar a resolver
+        </h2>
+
+        <p>
+            Muitas empresas possuem informações importantes, mas elas
+            estão espalhadas ou dependem de processos manuais.
+        </p>
+
+    </div>
+
+
+    <div class="problem-grid">
+
+        <div class="problem">
+
+            <div class="problem-number">01</div>
+
+            <h3>
+                Muito trabalho manual
+            </h3>
+
+            <p>
+                Funcionários gastam horas copiando, conferindo e
+                organizando informações que poderiam ser automatizadas.
+            </p>
+
+        </div>
+
+
+        <div class="problem">
+
+            <div class="problem-number">02</div>
+
+            <h3>
+                Informações espalhadas
+            </h3>
+
+            <p>
+                Dados ficam divididos entre planilhas, documentos,
+                sistemas diferentes ou até anotações.
+            </p>
+
+        </div>
+
+
+        <div class="problem">
+
+            <div class="problem-number">03</div>
+
+            <h3>
+                Dificuldade para enxergar os resultados
+            </h3>
+
+            <p>
+                A empresa possui os dados, mas não consegue visualizar
+                rapidamente o que está acontecendo.
+            </p>
+
+        </div>
+
+
+        <div class="problem">
+
+            <div class="problem-number">04</div>
+
+            <h3>
+                Sistemas que não atendem à necessidade
+            </h3>
+
+            <p>
+                Softwares prontos nem sempre acompanham a forma como
+                cada empresa trabalha.
+            </p>
+
+        </div>
+
+
+        <div class="problem">
+
+            <div class="problem-number">05</div>
+
+            <h3>
+                Relatórios demorados
+            </h3>
+
+            <p>
+                Informações precisam ser reunidas manualmente sempre
+                que alguém precisa de um relatório.
+            </p>
+
+        </div>
+
+
+        <div class="problem">
+
+            <div class="problem-number">06</div>
+
+            <h3>
+                Dados sem aproveitamento
+            </h3>
+
+            <p>
+                A empresa possui anos de informações, mas não consegue
+                utilizá-las para entender sua operação.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- EXPLICAÇÃO -->
+
+<section>
+
+    <div class="explanation">
+
+        <div>
+
+            <h2>
+                Tecnologia não precisa ser complicada.
+            </h2>
+
+            <p>
+                Meu trabalho é entender primeiro o problema da empresa
+                e somente depois escolher a tecnologia necessária.
+            </p>
+
+            <p>
+                Você não precisa entender programação, banco de dados
+                ou ferramentas de análise.
+            </p>
+
+            <p>
+                A minha função é transformar a necessidade do negócio
+                em uma solução que seja simples de utilizar.
+            </p>
+
+        </div>
+
+
+        <div class="example-box">
+
+            <h3>
+                Um exemplo simples
+            </h3>
+
+            <div class="example">
+
+                <strong>Antes</strong>
+
+                <span>
+                    Várias planilhas e informações espalhadas.
+                </span>
+
+            </div>
+
+            <div class="example">
+
+                <strong>Durante</strong>
+
+                <span>
+                    Organização dos dados e criação de uma solução.
+                </span>
+
+            </div>
+
+            <div class="example">
+
+                <strong>Depois</strong>
+
+                <span>
+                    Informações organizadas e disponíveis quando
+                    a empresa precisa delas.
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- SOLUÇÕES -->
+
+<section id="solucoes">
+
+    <div class="section-header">
+
+        <small>O que posso fazer</small>
+
+        <h2>
+            Soluções para diferentes necessidades
+        </h2>
+
+        <p>
+            Cada projeto pode ser desenvolvido de acordo com a realidade
+            e o tamanho da empresa.
+        </p>
+
+    </div>
+
+
+    <div class="service-grid">
+
+        <div class="service">
+
+            <div class="service-icon">▣</div>
+
+            <h3>
+                Sistemas personalizados
+            </h3>
+
+            <p>
+                Posso desenvolver sistemas para organizar atividades
+                específicas da empresa.
+            </p>
+
+            <ul>
+                <li>Cadastro de clientes</li>
+                <li>Controle de estoque</li>
+                <li>Atendimento</li>
+                <li>Controle de produtos</li>
+                <li>Históricos</li>
+                <li>Relatórios</li>
+            </ul>
+
+        </div>
+
+
+        <div class="service">
+
+            <div class="service-icon">▤</div>
+
+            <h3>
+                Organização dos dados
+            </h3>
+
+            <p>
+                Posso estruturar as informações para que elas sejam
+                armazenadas de maneira organizada.
+            </p>
+
+            <ul>
+                <li>Banco de dados</li>
+                <li>Relacionamento das informações</li>
+                <li>Padronização</li>
+                <li>Consultas</li>
+                <li>Histórico</li>
+            </ul>
+
+        </div>
+
+
+        <div class="service">
+
+            <div class="service-icon">◫</div>
+
+            <h3>
+                Dashboards e indicadores
+            </h3>
+
+            <p>
+                Transformo números e informações em painéis visuais
+                mais fáceis de acompanhar.
+            </p>
+
+            <ul>
+                <li>Indicadores</li>
+                <li>Gráficos</li>
+                <li>Comparativos</li>
+                <li>Análises mensais</li>
+                <li>Resultados anuais</li>
+            </ul>
+
+        </div>
+
+
+        <div class="service">
+
+            <div class="service-icon">↻</div>
+
+            <h3>
+                Automação
+            </h3>
+
+            <p>
+                Procuro identificar atividades repetitivas que podem
+                ser realizadas automaticamente.
+            </p>
+
+            <ul>
+                <li>Classificação de dados</li>
+                <li>Tratamento de informações</li>
+                <li>Processamento de arquivos</li>
+                <li>Geração de relatórios</li>
+                <li>Atualização de informações</li>
+            </ul>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- EXEMPLO -->
+
+<div class="scenario" id="exemplo">
+
+    <div class="scenario-inner">
+
+        <div class="section-header">
+
+            <small>Exemplo prático</small>
+
+            <h2>
+                Como uma necessidade vira uma solução
+            </h2>
+
+            <p>
+                Imagine uma empresa que controla seu estoque
+                utilizando várias planilhas.
+            </p>
+
+        </div>
+
+
+        <div class="scenario-box">
+
+            <h3>
+                Problema
+            </h3>
+
+            <p>
+                O funcionário precisa procurar informações em diferentes
+                planilhas para descobrir quanto existe no estoque.
+            </p>
+
+        </div>
+
+
+        <div class="arrow">
+            ↓
+        </div>
+
+
+        <div class="scenario-box">
+
+            <h3>
+                Solução
+            </h3>
+
+            <p>
+                Desenvolvimento de um sistema onde os produtos são
+                cadastrados e as movimentações são registradas.
+            </p>
+
+        </div>
+
+
+        <div class="arrow">
+            ↓
+        </div>
+
+
+        <div class="scenario-box">
+
+            <h3>
+                Resultado
+            </h3>
+
+            <p>
+                A empresa consegue consultar o estoque, acompanhar
+                movimentações e visualizar indicadores em um único lugar.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+<section>
+
+    <div class="section-header">
+
+        <small>Na prática</small>
+
+        <h2>
+            O que você pode me pedir?
+        </h2>
+
+        <p>
+            Posso atuar em diferentes etapas de um projeto,
+            desde a organização das informações até a criação
+            de uma solução completa.
+        </p>
+
+    </div>
+
+    <div class="service-grid">
+
+        <div class="service">
+
+            <div class="service-icon">01</div>
+
+            <h3>
+                "Tenho muitas planilhas"
+            </h3>
+
+            <p>
+                Posso organizar essas informações, criar uma estrutura
+                de dados e facilitar o acesso aos seus registros.
+            </p>
+
+        </div>
+
+        <div class="service">
+
+            <div class="service-icon">02</div>
+
+            <h3>
+                "Faço tudo manualmente"
+            </h3>
+
+            <p>
+                Posso analisar o processo e identificar o que pode ser
+                automatizado para reduzir trabalho repetitivo.
+            </p>
+
+        </div>
+
+        <div class="service">
+
+            <div class="service-icon">03</div>
+
+            <h3>
+                "Preciso de um sistema"
+            </h3>
+
+            <p>
+                Posso desenvolver uma aplicação personalizada para
+                atender às necessidades específicas da empresa.
+            </p>
+
+        </div>
+
+        <div class="service">
+
+            <div class="service-icon">04</div>
+
+            <h3>
+                "Tenho muitos dados, mas não sei analisá-los"
+            </h3>
+
+            <p>
+                Posso transformar os dados em indicadores, gráficos
+                e dashboards para facilitar a compreensão dos resultados.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- PROCESSO -->
+
+<section id="processo">
+
+    <div class="section-header">
+
+        <small>Meu processo</small>
+
+        <h2>
+            Como desenvolvo uma solução
+        </h2>
+
+        <p>
+            O foco começa no problema, e não na tecnologia.
+        </p>
+
+    </div>
+
+
+    <div class="steps">
+
+        <div class="step">
+
+            <div class="step-number">1</div>
+
+            <h3>
+                Conversar
+            </h3>
+
+            <p>
+                Entender a necessidade e como o trabalho é realizado atualmente.
+            </p>
+
+        </div>
+
+
+        <div class="step">
+
+            <div class="step-number">2</div>
+
+            <h3>
+                Planejar
+            </h3>
+
+            <p>
+                Identificar informações, regras e etapas necessárias.
+            </p>
+
+        </div>
+
+
+        <div class="step">
+
+            <div class="step-number">3</div>
+
+            <h3>
+                Desenvolver
+            </h3>
+
+            <p>
+                Construir a solução adequada para o problema.
+            </p>
+
+        </div>
+
+
+        <div class="step">
+
+            <div class="step-number">4</div>
+
+            <h3>
+                Entregar
+            </h3>
+
+            <p>
+                Disponibilizar uma ferramenta organizada e compreensível.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- TECNOLOGIAS -->
+
+<section class="technology">
+
+    <div class="technology-inner">
+
+        <h2>
+            E o que existe por trás das soluções?
+        </h2>
+
+        <p>
+            Utilizo diferentes tecnologias de acordo com a necessidade
+            de cada projeto.
+        </p>
+
+        <div class="tech-list">
+
+            <div class="tech">C#</div>
+            <div class="tech">.NET</div>
+            <div class="tech">Python</div>
+            <div class="tech">MySQL</div>
+            <div class="tech">SQL</div>
+            <div class="tech">Power BI</div>
+            <div class="tech">Power Query</div>
+            <div class="tech">DAX</div>
+            <div class="tech">ETL</div>
+            <div class="tech">Git</div>
+            <div class="tech">GitHub</div>
+            <div class="tech">.NET MAUI</div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- SOBRE -->
+
+<section id="sobre">
+
+    <div class="section-header">
+
+        <small>Sobre mim</small>
+
+        <h2>
+            Uma combinação de tecnologia e análise
+        </h2>
+
+        <p>
+            Minha formação permite trabalhar tanto na construção das
+            soluções quanto na organização e comunicação das informações.
+        </p>
+
+    </div>
+
+
+    <div class="formation">
+
+        <div class="formation-card">
+
+            <h3>
+                Banco de Dados
+            </h3>
+
+            <p>
+                Formação em Tecnologia em Banco de Dados,
+                com foco em estruturação e organização das informações.
+            </p>
+
+        </div>
+
+
+        <div class="formation-card">
+
+            <h3>
+                Desenvolvimento de Sistemas
+            </h3>
+
+            <p>
+                Formação técnica em Desenvolvimento de Sistemas,
+                com experiência prática em desenvolvimento de aplicações.
+            </p>
+
+        </div>
+
+
+        <div class="formation-card">
+
+            <h3>
+                Comunicação
+            </h3>
+
+            <p>
+                Formação em Jornalismo, contribuindo para organização,
+                interpretação e comunicação das informações.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FINAL -->
+
+<section class="final">
+
+    <h2>
+        Sua empresa tem um problema que pode ser resolvido com tecnologia?
+    </h2>
+
+    <p>
+        Posso analisar a necessidade, entender o processo atual e
+        desenvolver uma solução adequada para a realidade do negócio.
+    </p>
+
+    <a href="mailto:ednadelry@gmail.com" class="final-button">
+    Entre em contato
+</a>
+
+<p style="margin-top: 20px;">
+    
+</p>
+
+</section>
+
+
+<footer>
+
+    <p>
+        © 2026 — Soluções em Tecnologia, Dados e Business Intelligence
+    </p>
+
+</footer>
+
+</body>
+</html>
